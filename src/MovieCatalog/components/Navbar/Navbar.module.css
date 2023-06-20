@@ -1,0 +1,63 @@
+.navHead{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 20px 20px;
+    background-color: #1F2326;
+}
+.navLogo{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.801);
+    font-size: 2em;
+}
+.findForm{
+    width: 40%;
+    display: flex;
+}
+.findForm > input,
+.findForm > button
+{
+    display: block;
+    height: 30px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #0C1013;
+}
+
+.btnFindForm{
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.logoBtnFind{
+    height: 1.2em;
+    width: 1.2em;
+    fill: rgba(255, 255, 255, 0.659);
+    margin: 5px;
+}
+.btnFindForm:hover .logoBtnFind{
+    fill: #FFDA47;
+}
+
+.findForm > input {
+    width: 100%;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    padding-left: 10px;
+    color: rgba(255, 255, 255, 0.659);
+}
+.btnReg,
+.btnEntry{
+    height: 40px;
+    width: 90px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btnReg{
+    background-color: rgba(255, 255, 255, 0);
+    margin-right: 5px;
+    color: rgba(255, 255, 255, 0.659);
+}
+.btnReg:hover{
+    color: #FFDA47; 
+}

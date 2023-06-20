@@ -1,0 +1,7 @@
+.movieFiltersForm{
+    padding: 0 15px;
+    background-color: #1F2326;
+}
+.movieFiltersForm > *{
+    margin: 20px 0;
+}

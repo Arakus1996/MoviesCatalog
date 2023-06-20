@@ -1,0 +1,13 @@
+
+.raitingTitle{
+    color: rgba(255, 255, 255, 0.659);
+    list-style-type: none;
+}
+
+.raitingTitle > li{
+    padding: 5px 0;
+}
+
+InputRangeTwoThumb{
+    height: 100px;
+}

@@ -1,0 +1,12 @@
+video{
+    width: 320px;
+    height: 180px;
+}
+.mediaBlock{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.mediaBlock > *{
+    margin: 5px;
+}

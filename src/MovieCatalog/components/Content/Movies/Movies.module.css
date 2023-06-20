@@ -1,0 +1,61 @@
+
+.movieCard{
+    max-height: 320px;
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    background-color: #262A2D;
+    margin: 15px 0 15px 15px;
+    border-radius: 10px;
+    
+}
+.movieCard_info{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Тут паддинг выглядит сомнительно позже чекнуть */
+.movieInfo{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.9em;
+    padding-right: 30px;
+    
+}
+
+/* Тут мб еще подумать */
+.movieInfo_section{
+    max-height: 17em;
+    overflow: hidden;
+}
+
+.moviePoster{
+    width: 100%;
+    border-radius: 10px 0 0 10px;  
+}
+.movieInfo_name{
+    font-size: 1.8em;
+    font-weight: 500;
+    color: white;
+    padding-bottom: 0.5em;
+}
+.movieInfo_description{
+    color: rgba(255, 255, 255, 0.56);
+    padding-bottom: 0.5em;
+}
+.movieInfo_description > span{
+    display: block;
+}
+.movieInfo_rating{
+    display: flex;
+}
+.movieInfo_rating > div{
+   color: rgba(255, 255, 255, 0.564);
+   background-color: #0C1013;
+   border-radius: 5px;
+   padding: 2px 7px 3px 7px;
+   margin-right: 7px;
+}
+

@@ -1,0 +1,18 @@
+.sortBlock{
+    background-color: #1F2326;
+    text-align: right;
+}
+.sortBlock > select{
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+    color: rgba(255, 255, 255, 0.659);
+}
+
+.sortBlock > select > option{
+   background-color: #262A2D;
+   color: rgba(255, 255, 255, 0.659);
+}
+
+
+

@@ -1,0 +1,43 @@
+.navList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #0C0F0F;
+}
+
+.navList li {
+    display: inline;
+
+}
+
+.navList a {
+    position: relative;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.659);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+
+.logoBurger{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 1em;
+    width: 1em;
+    fill: rgba(255, 255, 255, 0.659);
+    transition-duration: 0.3s;
+}
+
+.navList a:hover { 
+    color: #FFDA47;
+}
+.navList a:hover .logoBurger { 
+    fill: #FFDA47;
+}

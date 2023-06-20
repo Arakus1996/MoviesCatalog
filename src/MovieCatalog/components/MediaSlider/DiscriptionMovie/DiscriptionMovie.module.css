@@ -1,0 +1,41 @@
+.descriptionBlock{
+    
+}
+
+.description > h1{
+    font-size: 3.5em;
+    margin: 20px 0;
+    font-weight: bold;
+    color:white;
+}
+.description > p{
+    max-width: 70%;
+    margin: 20px 0;
+}
+
+.descriptionBlock_btn{
+  display: flex;
+  align-items: center;
+}
+.ageRaiting{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    text-align: center;
+}
+.ageRaiting__logo{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: white;
+}
+.ageRaiting__text{
+    font-size: 1em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}

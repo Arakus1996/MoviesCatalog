@@ -1,0 +1,74 @@
+
+.select.active .select__body {
+    display: block;
+}
+.select.active .select__logo {
+    transform: rotate(180deg);
+}
+
+.select__header{
+    border-radius: 10px;
+    padding: 0.5em;
+    background-color: #31373a;
+}
+.select__toggle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    color: rgba(255, 255, 255, 0.659);
+    padding: 0.4em 1em;
+    font-size: 1.1em;
+    line-height: 1.4;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+.select__toggle > span{
+    text-align: start;
+}
+
+.select__logo{
+    height: 30px;
+    width: 30px;
+    fill: rgba(255, 255, 255, 0.659);
+}
+
+.select__body{
+    display: none;
+    max-height: 10em;
+    margin: 0.5em 0px;
+    overflow-y: auto;
+    background-color: #31373a;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.659);
+}
+.select__options{
+    margin: 0;
+    padding: 0;
+    list-style: none;    
+}
+.select__option{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.select__option:hover {
+    background-color: #596064c2;
+    color: #FFDA47;
+    transition: 0.2s background-color ease-in-out; 
+}
+.select__check{
+    height: 15px;
+    width: 15px;
+    fill: #FFDA47;
+    display: none;
+}
+.select__check.active{
+    display: block;
+}
+
+
