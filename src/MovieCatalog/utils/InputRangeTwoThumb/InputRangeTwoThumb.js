@@ -31,7 +31,7 @@ const InputRangeTwoThumb = (props) => {
     return (
         <div className={style.inputRange}>
             <span className={style.inputRangeName}>{props.name}</span>
-            <div className={style.rangeSlider}>
+            <div className={style.rangeSlider + ' ' + ( (lowerValue!=props.min || upperValue!=props.max) ? style.active : ' ')}>
                 <form>
                     <input
                         id="lower"

@@ -65,8 +65,12 @@ input[type=range]{
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    background: #FFDA47;
+    border: 1px solid #ffda4796;
+    background: #43484d;
     cursor: pointer;
+}
+.rangeSlider.active input[type=range]::-moz-range-thumb {
+    background-color: #FFDA47;
 }
 
 .rangeNumber{

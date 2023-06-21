@@ -11,3 +11,20 @@
 InputRangeTwoThumb{
     height: 100px;
 }
+
+.resetFiltersBtn{
+    display: flex;
+    justify-content: center;
+}
+.removeFilterBlock{
+
+}
+.removeFilterBtn{
+    display: inline-block;
+    margin: 0.3em;
+    padding: 0.4em;
+    background-color: #43484d;
+}
+.removeFilterBtn > span{
+    cursor: pointer;
+}

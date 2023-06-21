@@ -22,8 +22,8 @@ const Paginator = () => {
     //     dispatch(getMovies(currentPage, perPage))
     // }, [currentPage])
 
-    return (
-        <div className={style.paginator}>
+    return (<>
+        {totalPages > 0 && <div className={style.paginator}>
             {currentPage > 1 && <span onClick={() => dispatch(setCurrentPage(currentPage - 1))}>{"<"}</span>}
             <span
                 className={currentPage == 1 ? style.currentPageBtn : style.pageBtn}
@@ -47,7 +47,8 @@ const Paginator = () => {
                 {totalPages}
             </span>
             {currentPage < totalPages && <span onClick={() => dispatch(setCurrentPage(currentPage + 1))}>{">"}</span>}
-        </div>
+        </div>}
+        </>
     );
 }
 
