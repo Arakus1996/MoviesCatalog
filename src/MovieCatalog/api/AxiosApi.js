@@ -43,7 +43,8 @@ export const getMovieById = (id) => {
 // В стейте можно объект массивов, если по кажому имени буду подсовывать массив, то тут по имени смогу мапом
 // прогнать массив и генерировать фильтры
 export const filterAPI = {
-    getMovie(currentPage, perPage, sortField, searchString, movieTypeNumber, genre, countrie, years, age, raitingKp, raitingImdb, budget, fees) {
+    getMovie(currentPage, perPage, sortField, searchString, movieTypeNumber, genre, countrie, years, age, raitingKp, 
+        raitingImdb, budget, fees, newMovieDate, isTop) {
         return async (dispatch) => {
             const response = await api.get(`movie?sortField=${sortField}&sortType=-1&page=${currentPage}&limit=${perPage}
             ${searchString ? `&name=${searchString}` : ''}
@@ -56,7 +57,10 @@ export const filterAPI = {
             ${countrie ? `&countries.name=${countrie}` : ''}
             ${budget ? `&budget.value=${budget}` : ''}
             ${fees ? `&fees.world.value=${fees}` : ''}
+            ${newMovieDate ? `&premiere.world=${newMovieDate}` : ''}
+            ${isTop ? `&top250=${isTop}` : ''}
             `)
+            //21.05.2023-21.06.2023
             // const response = await api.get(`movie?page=${currentPage}&limit=${perPage}`)
             dispatch(setMovies(response.data))
         }

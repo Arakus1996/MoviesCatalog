@@ -15,7 +15,7 @@ const InputRange = (props) => {
 
     const handleChange = (e) => {
         setValue(e.target.value)
-        props.setIsDefault(false)
+        props.setIsDefault()
     }
     const handleClick = (e) => {
         setValue(e.target.value)

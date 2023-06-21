@@ -20,6 +20,7 @@ export const MovieCatalog = () => {
     const sortValue = useSelector(state => state.movie.sortValue)
     const activeFilters = useSelector(state => state.movie.activeFilters)
     const searchString = useSelector(state => state.movie.searchString)
+    
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getMoviesInSinema())
@@ -30,7 +31,8 @@ export const MovieCatalog = () => {
         // dispatch(getMovies(currentPage, perPage))
         dispatch(filterAPI.getMovie(currentPage, perPage, selectedSort[sortValue].sortField, searchString, activeFilters.movieType,
             activeFilters.genre, activeFilters.countrie, activeFilters.years, activeFilters.age,
-            activeFilters.raitingKp, activeFilters.raitingImdb, activeFilters.budget, activeFilters.fees))
+            activeFilters.raitingKp, activeFilters.raitingImdb, activeFilters.budget, activeFilters.fees, activeFilters.newMovieDate,
+            activeFilters.isTop))
     }, [currentPage, sortValue, activeFilters, searchString])
 
     return <div className={style.movieCatalog}>

@@ -1,26 +1,23 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import InputRange from "../../../../utils/ImputRange/InputRange"
 import InputRangeTwoThumb from "../../../../utils/InputRangeTwoThumb/InputRangeTwoThumb"
 import Select from "../../../../utils/Select/Select"
 import SelectForComponent from "../../../../utils/SelectForComponent/SelectForComponent"
 import style from "./FilterList.module.css"
 import { setActiveBudget, setActiveCountries, setActiveFees, setActiveMovieType, setActiveGenres, 
-    setActiveRaitingImdb, setActiveRaitingKp, setActiveAge, setActiveYears, setDefaultFilters } from "../../../../../store/reducers"
+    setActiveRaitingImdb, setActiveRaitingKp, setActiveAge, setActiveYears, setDefaultFilters, setNotDefaultFilter } from "../../../../../store/reducers"
 import { useState } from "react"
 import Button from "../../../../utils/Button/Button"
 
 //////Надо сделлать для фильтров где поле ввода что то типа editMode
 /// надо при нажатии на поле редактировать и визуально это выделить, а при нажатии на свободное пространство
 /// отправлять запрос на сервер
+/// везде лучше поставить range с 2 thumb
 
 const FilterItem = (props) => {
-    
-    // const dispatch = useDispatch()
-    // const setActiveFilters = setActiveFilters
     return (
         <Select name={props.name} options={props.filterItems} activeFilter={props.activeFilter} dispatchActiveFilters={props.dispatchActiveFilters} />
     )
-
 }
 
 const FilterList = (props) => {
@@ -49,10 +46,12 @@ const FilterList = (props) => {
         max:1000000000,
         step:100
     }
-    const [isDefault, setIsDefault] = useState(false)
+    const isDefault = useSelector(state => state.movie.isDefault)
     const dispatch = useDispatch()
+    const setIsDefault = () => {
+        dispatch(setNotDefaultFilter())
+    }
     const handleClick = () => {
-        setIsDefault(true)
         dispatch(setDefaultFilters())
     } 
     return (

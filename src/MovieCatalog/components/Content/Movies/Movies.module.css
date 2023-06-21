@@ -1,6 +1,7 @@
 
 .movieCard{
     max-height: 320px;
+    height: 320px;
     display: grid;
     grid-template-columns: 2fr 7fr;
     background-color: #262A2D;
@@ -34,6 +35,11 @@
 .moviePoster{
     width: 100%;
     border-radius: 10px 0 0 10px;  
+}
+.noMoviePoster{
+    width: 320px;
+    height: 320px;
+    border: 1px solid black;
 }
 .movieInfo_name{
     font-size: 1.8em;

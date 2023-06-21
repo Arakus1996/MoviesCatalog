@@ -11,24 +11,26 @@ const initialState = {
     countriesData: [],
     genresData: [],
     movieType: [
-        { name: "Фильмы", slug: 1},
-        { name: "Сериалы", slug: 2},
-        { name: "Мультфильмы", slug: 3},
-        { name: "Аниме", slug: 4},
-        { name: "Мультсериалы", slug: 5},
-        { name: "ТВ-шоу", slug: 6}
+        { name: "Фильмы", slug: 1 },
+        { name: "Сериалы", slug: 2 },
+        { name: "Мультфильмы", slug: 3 },
+        { name: "Аниме", slug: 4 },
+        { name: "Мультсериалы", slug: 5 },
+        { name: "ТВ-шоу", slug: 6 }
     ],
     searchString: null,
     activeFilters: {
         genre: null,
         movieType: null,
         countrie: null,
-        years:null,
+        years: null,
         age: null,
         raitingKp: null,
         raitingImdb: null,
         budget: null,
         fees: null,
+        newMovieDate: null,
+        isTop: null
     },
     currentPage: 1,
     perPage: 5,
@@ -39,7 +41,8 @@ const initialState = {
         { name: "Рейтингу", sortField: "rating.kp" },
         { name: "Годам", sortField: "year" }
     ],
-    sortValue: 0
+    sortValue: 0,
+    isDefault: true
 }
 
 const movieSlice = createSlice({
@@ -53,7 +56,7 @@ const movieSlice = createSlice({
             // state.movieData.push(action.payload)
             state.moviesOnSaleData = action.payload.docs
         },
-        setMovie(state, action){
+        setMovie(state, action) {
             state.movieOnSale = action.payload
         },
         setMovies(state, action) {
@@ -106,8 +109,19 @@ const movieSlice = createSlice({
         setActiveFees(state, action) {
             state.activeFilters.fees = action.payload
         },
+        setNewMovieDate(state, action) {
+            state.activeFilters.newMovieDate = action.payload
+        },
+        setIsTop(state, action) {
+            state.activeFilters.isTop = action.payload
+            state.sortValue = 1
+        },
+        setNotDefaultFilter(state) {
+            state.isDefault = false
+        },
         setDefaultFilters(state) {
             state.activeFilters = initialState.activeFilters
+            state.isDefault = true
         }
 
     }
@@ -115,5 +129,6 @@ const movieSlice = createSlice({
 
 export default movieSlice.reducer
 export const { setMovieId, setMovieForSlider, setMovieSlider, setMovie, setMovies, setCounties, setGenres,
-    setCurrentPage, setSortValue, setSearchString, setTypeNumber, setActiveGenres, setActiveMovieType, setActiveCountries,setActiveYears,
-    setActiveAge,setActiveRaitingKp,setActiveRaitingImdb,setActiveBudget,setActiveFees, setDefaultFilters} = movieSlice.actions
+    setCurrentPage, setSortValue, setSearchString, setTypeNumber, setActiveGenres, setActiveMovieType, setActiveCountries, setActiveYears,
+    setActiveAge, setActiveRaitingKp, setActiveRaitingImdb, setActiveBudget, setActiveFees, setNewMovieDate, setIsTop, 
+    setDefaultFilters, setNotDefaultFilter } = movieSlice.actions

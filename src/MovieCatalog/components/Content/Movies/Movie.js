@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import Button from '../../../utils/Button/Button';
 import style from './Movies.module.css'
-
+//////Тут где отсутствует постер добавить заглушку
 const Movie = (props) => {
     let movie = props.movie
     return (
         <div className={style.movieCard}>
-            <Link to={`/movie/${movie.id}`} state={{ movie }}><img className={style.moviePoster} src={movie?.poster?.url} /></Link>
+            <Link to={`/movie/${movie.id}`} state={{ movie }}>
+                {<img className={style.moviePoster} src={movie?.poster?.url}/> || <div className={style.noMoviePoster}></div>}
+            </Link>
             <div className={style.movieCard_info}>
                 <div className={style.movieInfo}>
                     <div className={style.movieInfo_section}>
