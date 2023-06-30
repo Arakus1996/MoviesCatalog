@@ -4,9 +4,12 @@ import { createSlice } from "@reduxjs/toolkit"
 // мб массив идентификаторов ??????  
 
 const initialState = {
-    idMovie: 666,
+    idMovie: null,
+    idPerson: null,
     moviesOnSaleData: [],
-    movie: {},
+    movieOnSaleId: null,
+    movie: [],
+    person: [],
     moviesData: [],
     countriesData: [],
     genresData: [],
@@ -52,12 +55,21 @@ const movieSlice = createSlice({
         setMovieId(state, action) {
             state.idMovie = action.payload
         },
+        setPersonId(state, action) {
+            state.idPerson = action.payload
+        },
+        setMovieOnSaleId(state, action) {
+            state.movieOnSaleId = action.payload
+        },
         setMovieForSlider(state, action) {
             // state.movieData.push(action.payload)
             state.moviesOnSaleData = action.payload.docs
         },
         setMovie(state, action) {
-            state.movieOnSale = action.payload
+            state.movie = action.payload
+        },
+        setPerson(state, action) {
+            state.person = action.payload
         },
         setMovies(state, action) {
             state.moviesData = action.payload.docs
@@ -128,7 +140,7 @@ const movieSlice = createSlice({
 })
 
 export default movieSlice.reducer
-export const { setMovieId, setMovieForSlider, setMovieSlider, setMovie, setMovies, setCounties, setGenres,
+export const { setMovieId, setPersonId, setMovieOnSaleId, setMovieForSlider, setMovieSlider, setMovie, setPerson, setMovies, setCounties, setGenres,
     setCurrentPage, setSortValue, setSearchString, setTypeNumber, setActiveGenres, setActiveMovieType, setActiveCountries, setActiveYears,
     setActiveAge, setActiveRaitingKp, setActiveRaitingImdb, setActiveBudget, setActiveFees, setNewMovieDate, setIsTop, 
     setDefaultFilters, setNotDefaultFilter } = movieSlice.actions

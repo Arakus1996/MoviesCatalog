@@ -1,0 +1,12 @@
+.discriptionBlock__table{
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #35393d;
+    border: 1px solid #2c2f32;
+}
+.discriptionBlock__table > table td{
+    padding: 0.5em;
+}
+.table__lineName{
+    color: #8e8e8e;
+}

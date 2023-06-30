@@ -9,13 +9,14 @@
     text-decoration: none;
     color: rgba(255, 255, 255, 0.801);
     font-size: 2em;
+    padding-right: 10px;
 }
 .findForm{
     width: 40%;
     display: flex;
 }
 .findForm > input,
-.findForm > button
+.findForm .btnFindForm
 {
     display: block;
     height: 30px;
@@ -45,8 +46,10 @@
     padding-left: 10px;
     color: rgba(255, 255, 255, 0.659);
 }
-.btnReg,
-.btnEntry{
+.RegAndEntry{
+    padding-left: 10px;
+}
+.btnReg{
     height: 40px;
     width: 90px;
     border: none;

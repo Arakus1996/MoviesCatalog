@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setCounties, setGenres, setMovieForSlider, setMovie, setMovies} from "../../store/reducers";
+import { setCounties, setGenres, setMovieForSlider, setMovie, setMovies, setPerson} from "../../store/reducers";
 
 //////// ПОфиксить траблу по которой фильтр по ЖАНР и СТРАНА вместе не работают!
 
@@ -19,13 +19,6 @@ const apiOld = axios.create({
     }
 })
 
-// export const getMovies = (currentPage, perPage) => {
-//     return async (dispatch) => {
-//         const response = await api.get(`movie?page=${currentPage}&limit=${perPage}`)
-//         dispatch(setMovies(response.data))
-//     }
-// }
-
 export const getMoviesInSinema = () => {
     return async (dispatch) => {
         const response = await api.get(`movie?page=1&limit=5&ticketsOnSale=true`)
@@ -37,6 +30,19 @@ export const getMovieById = (id) => {
         const response = await api.get(`/movie/${id}`)
         dispatch(setMovie(response.data))
     }
+}
+export const getPersonById = (id) => {
+    return async (dispatch) => {
+        const response = await apiOld.get(`/person/${id}`)
+        dispatch(setPerson(response.data))
+    } 
+}
+
+export const getMoviesByPersonId = (id) => {
+    return async (dispatch) => {
+        const response = await api.get(`/movie?page=1&limit=10&persons.id=${id}`)
+        dispatch(setMovies(response.data))
+    } 
 }
 
 

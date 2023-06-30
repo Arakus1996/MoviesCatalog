@@ -2,6 +2,7 @@ import style from './NavList.module.css'
 import { ReactComponent as LogoBurger } from '../../../../icons/burger.svg'
 import { useDispatch } from 'react-redux';
 import { setActiveCountries, setActiveGenres, setActiveMovieType, setDefaultFilters, setIsTop, setNewMovieDate } from '../../../../store/reducers';
+import { Link } from 'react-router-dom';
 
 
 ///// Надо в навбаре настроить популярные фильтры по клику 
@@ -22,6 +23,7 @@ const NavButtons = (props) => {
         dispatch(action(data))
     }
     return (
+        <Link to="/">
         <ul className={style.navList}>
             <li><a><LogoBurger className={style.logoBurger} /><span>Категории</span></a></li>
             <li onClick={() => handleClick('Фильмы', setActiveMovieType)}><a>Фильмы</a></li>
@@ -36,6 +38,7 @@ const NavButtons = (props) => {
             <li onClick={() => handleClick('Россия', setActiveCountries)}><a>Русское</a></li>
             <li onClick={handleClick}><a>Рандом</a></li>
         </ul>
+        </Link>
     );
 }
 

@@ -1,18 +1,24 @@
 import { Link } from 'react-router-dom';
 import Button from '../../../utils/Button/Button';
 import style from './Movies.module.css'
+import { useDispatch } from 'react-redux';
+import { setMovieId } from '../../../../store/reducers';
 //////Тут где отсутствует постер добавить заглушку
 const Movie = (props) => {
     let movie = props.movie
+    const dispatch = useDispatch()
+    console.log(movie)
     return (
         <div className={style.movieCard}>
-            <Link to={`/movie/${movie.id}`} state={{ movie }}>
+            <Link to={`/movie/${movie.id}`} state={{ movie }} onClick={() => dispatch(setMovieId(movie.id))}>
                 {<img className={style.moviePoster} src={movie?.poster?.url}/> || <div className={style.noMoviePoster}></div>}
             </Link>
             <div className={style.movieCard_info}>
                 <div className={style.movieInfo}>
                     <div className={style.movieInfo_section}>
-                    <Link to={`/movie/${movie.id}`} state={{ movie }}><h2 className={style.movieInfo_name}>{movie.name}</h2></Link>
+                    <Link to={`/movie/${movie.id}`} state={{ movie }} onClick={() => dispatch(setMovieId(movie.id))}>
+                        <h2 className={style.movieInfo_name}>{movie.name}</h2>
+                    </Link>
                         <p className={style.movieInfo_description}>
                             <span><b>Жанр:</b> {movie.genres.map((genre, index) => <span key={index}>{genre.name}, </span>)}</span>
                             <span><b>Премьера(РФ):</b> {movie.premiere?.russia}</span>

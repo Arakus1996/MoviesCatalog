@@ -65,10 +65,9 @@ const FilterList = (props) => {
 
 
             {/* <FilterItem name={"Год"} filterItems={years} dispatchActiveFilters={(option) => dispatch(setActiveYear(option))}/> */}
-            {/* <InputRange name={"Возраст"} range={ageRaitingRange} activeFilter={props.activeFilters.age} isDefault={isDefault} setIsDefault={setIsDefault} dispatchActiveFilters={(option) => dispatch(setActiveAge(option))}/> */}
             {/* ТУТ НАДО ПОФИКСИТЬ МБ ПО ДРУГОМУ РАСПОЛОЖИТЬ UL LI НАДО ??? */}
-            <InputRange name={"Возраст"} initialValue={0} range={ageRaitingRange} isDefault={isDefault} setIsDefault={setIsDefault} /*activeFilter={props.activeFilters.age}*/ dispatchActiveFilters={(option) => dispatch(setActiveAge(option))} />
-            {/* <FilterItem name={"Рейтинги"} filterItems={'eawda'} /> */}
+            
+            <InputRange name={"Возраст"} initialValue={0} range={ageRaitingRange} isDefault={isDefault} setIsDefault={setIsDefault} dispatchActiveFilters={(option) => dispatch(setActiveAge(option))} />
 
             <SelectForComponent name={"Рейтинги"}>
                 <InputRangeTwoThumb name={"Кинопоиск"} min={1} max={10} step={1} range={kpRaitingRange} isDefault={isDefault} setIsDefault={setIsDefault} dispatchActiveFilters={(option) => dispatch(setActiveRaitingKp(option))} />
@@ -80,7 +79,7 @@ const FilterList = (props) => {
 
             <div className={style.resetFiltersBtn}><Button onClick={handleClick}>Сбросить Фильтры</Button></div>
             
-            <ul className={style.removeFilterBlock}>{Object.values(props.activeFilters).map(filter => !filter ? <li className={style.removeFilterBtn}>asdasd{filter} <span>X</span></li> : '')}</ul>
+            {/* <ul className={style.removeFilterBlock}>{Object.values(props.activeFilters).map(filter => filter ? <li className={style.removeFilterBtn}>{filter} <span>X</span></li> : '')}</ul> */}
         </>
     );
 }

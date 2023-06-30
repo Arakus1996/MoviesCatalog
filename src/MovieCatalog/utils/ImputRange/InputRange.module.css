@@ -15,7 +15,8 @@
 .rangeSlider{
     display: flex;
     align-items: center;
-    width: 15em;
+    width: 90%;
+    min-width: 10em;
     height: 20px;
     position: relative;
     /* padding: 5px; */
@@ -80,7 +81,7 @@ input[type=range]{
     
 }
 .rangeNumber input[type=text]{
-    width: 10em;
+    width: 60%;
     height: 2em;
     text-align: center;
     font-size: 0.8em;

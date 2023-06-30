@@ -5,7 +5,6 @@ import {ReactComponent as LogoCheck} from '../../../icons/check.svg'
 
 const Select = (props) => {
     
-    //Надо будет отправлять в стор выбранные select'ы даже если не нажали кнопку для отправки формы
     // чтобы фильтры сохранялись так же добавить сброс фильтров
     // надо чтобы были селекты с 1 выбором и с чекбоксами
     //Пофиксить галки
@@ -24,7 +23,7 @@ const Select = (props) => {
                     type='button' className={style.select__toggle}
                 >
                     <span>{props.name}</span>
-                    <LogoArrow className={style.select__logo} />
+                    <div className={style.select_arrow}><LogoArrow className={style.select__logo} /></div>
                 </button>
             </div>
 

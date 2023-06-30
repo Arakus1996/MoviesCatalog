@@ -6,6 +6,7 @@ import Button from '../../utils/Button/Button'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { setSearchString } from '../../../store/reducers'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [findState, setFindState] = useState(null)
@@ -23,7 +24,7 @@ const Navbar = () => {
                 <a href='#' className={style.navLogo}><strong>Кинопоказ</strong></a>
                 <div className={style.findForm}>
                     <input type="text" placeholder='Поиск...' onChange={handleChange} />
-                    <button className={style.btnFindForm} onClick={handleClick}><LogoFind className={style.logoBtnFind}/></button>
+                    <Link to="/"><button className={style.btnFindForm} onClick={handleClick}><LogoFind className={style.logoBtnFind}/></button></Link>
                 </div>
                 <div className={style.RegAndEntry}>
                     <button className={style.btnReg}>Регистрация</button>

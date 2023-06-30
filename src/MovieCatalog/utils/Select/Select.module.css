@@ -19,7 +19,7 @@
     background: none;
     color: rgba(255, 255, 255, 0.659);
     padding: 0.4em 1em;
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.4;
     border-radius: 10px;
     cursor: pointer;
@@ -28,7 +28,10 @@
 .select__toggle > span{
     text-align: start;
 }
-
+.select_arrow{
+    min-width: 30px;
+    margin-left: 2px;
+}
 .select__logo{
     height: 30px;
     width: 30px;
@@ -65,7 +68,7 @@
     height: 15px;
     width: 15px;
     fill: #FFDA47;
-    display: none;
+    display: none;   
 }
 .select__check.active{
     display: block;

@@ -1,0 +1,15 @@
+.rating{
+    padding: 7px;
+    border: 1px solid #ffda47c1;
+    border-radius: 1em;
+}
+.ratingName{
+    padding-right: 5px;
+    font-size: 1.1em;
+    /* font-weight: bold; */
+}
+.ratingValue{
+    font-size: 1.2em;
+    font-weight: bold;
+    /* color: #60C60A; */
+}

@@ -6,7 +6,7 @@
     background-color: #31373a;
     border-radius: 10px;
     padding: 10px 0;
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.4;
 }
 .inputRangeName{
@@ -15,7 +15,8 @@
 .rangeSlider{
     display: flex;
     align-items: center;
-    width: 15em;
+    min-width: 10em;
+    width: 90%;
     height: 20px;
     position: relative;
     /* padding: 5px; */

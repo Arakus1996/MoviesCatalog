@@ -1,0 +1,44 @@
+.person{
+    display: grid;
+    grid-template-areas: "media description description"
+                         "etcContent etcContent etcContent";
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 1em;
+    padding: 1em 1em;
+    background-color: #262A2D;
+}
+
+.mediaBlock{
+    grid-area: media;
+    
+}
+.mediaBlock__poster{
+    max-width: 300px;
+    min-width: 200px;
+}
+.discriptionBlock{
+    grid-area: description;
+    font-size: 0.9em;
+}
+.discriptionBlock > div{
+    margin-bottom: 0.4em;
+}
+
+.discriptionBlock__name{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.etcBlock{
+    grid-area: etcContent;
+}
+.etcBlock__discription{
+    font-size: 1em;
+    margin: 1em 0;
+}
+.etcBlock__discription > h3{
+    font-size: 1.8em;
+    
+    padding-bottom: 0.5em;
+}

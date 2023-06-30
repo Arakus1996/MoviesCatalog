@@ -1,13 +1,14 @@
 import style from './MovieCatalog.module.css'
-import Navbar from './components/Navbar/Navbar'
 import MediaSlider from './components/MediaSlider/MediaSlider'
 import { filterAPI, getMoviesById, getMoviesInSinema } from './api/AxiosApi'
 import { useEffect } from 'react'
 import Content from './components/Content/Content'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
-
-
+/////Убрал стрикт мод чтобы небыло повторного запроса  на сервер
+////в movieOnSaleId сетаю moviesOnSaleData[0].id и сразу запрос на сервер на фильм по данному id и надо запушить эти данные в массив
+///// если нажал другой кружок то опять запрос на серв и пушим в массив, нужна так же проверка есть ли данные, если нет делать запрос на серв
+///// если есть то не делать заброс
 export const MovieCatalog = () => {
     const moviesOnSale = useSelector(state => state.movie.moviesOnSaleData)
     const movies = useSelector(state => state.movie.moviesData)
@@ -34,9 +35,8 @@ export const MovieCatalog = () => {
             activeFilters.raitingKp, activeFilters.raitingImdb, activeFilters.budget, activeFilters.fees, activeFilters.newMovieDate,
             activeFilters.isTop))
     }, [currentPage, sortValue, activeFilters, searchString])
-
+    
     return <div className={style.movieCatalog}>
-        <Navbar />
         <MediaSlider movies={moviesOnSale} />
         <Content movies={movies} selectedSort={selectedSort}
             countries={countries} genres={genres} movieType={movieType} activeFilters={activeFilters} />
