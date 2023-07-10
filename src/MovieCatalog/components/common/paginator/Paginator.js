@@ -1,11 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import style from './Paginator.module.css'
 import { setCurrentPage } from '../../../../store/reducers';
-import { useEffect} from 'react';
-import { getMovies } from '../../../api/AxiosApi';
-
-//Сделать свой стейт пагинатору локальный????? чтобы пагинатор переиспользовать можно было
-//Нужен ли рефакторинг???
 
 const Paginator = () => {
     const dispatch = useDispatch();
@@ -17,10 +12,6 @@ const Paginator = () => {
     for (let i = 2; i <= totalPages; i++) {
         pages.push(i)
     }
-
-    // useEffect(() => {
-    //     dispatch(getMovies(currentPage, perPage))
-    // }, [currentPage])
 
     return (<>
         {totalPages > 0 && <div className={style.paginator}>

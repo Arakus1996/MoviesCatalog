@@ -1,18 +1,25 @@
 .slider{
     font-size: 1em;
+    /* width: 1280px; */
+    width: 1160px;
 }
 .title{
     font-size: 1.8em;
-
+}
+h3{
+    color: white;
+}
+.sliderContainer{
+    width: 1120px;
+    margin: 0 auto;
 }
 .sliderBlock{
-    margin: 0 auto;
+    width: 1120px;
     display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 .slide_wrap{
-    width: calc(750px + 5px * 10);
-    margin: 30px auto;
+    margin: 30px 0;
     overflow: hidden;
 }
 .content{
@@ -33,6 +40,20 @@
     height: 225px;
     width: 150px;
 }
+.content__rating{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-color: #343333dc;
+    border-radius: 10px;
+    padding: 3px;
+    text-decoration:none;
+    color: green;
+}
+.content__name{
+    width: 150px;
+    text-align: center;
+}
 .noPoster{
     height: 225px;
     width: 150px;
@@ -47,21 +68,70 @@
     fill: rgba(255, 255, 255, 0.659);
 }
 .slider__btn{
-    position: relative;
+    position: absolute;
     height: 50px;
     width: 50px;
     top: calc(225px / 2);
     border-radius: 50%;
-    font-size: 2em;
-    background-color: aliceblue;
+    background-color: #FFDA47;
     color: black
 }
+.sliderIcon{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height: 1.4em;
+    width: 1.4em;
+    fill: #262A2D;
+}
+.sliderIcon.next{
+    transform: translate(-50%, -50%) rotate(180deg) ;   
+}
+
 .slider__btn.next{
-    right: calc(50% - 430px);
+    right: -20px;
+    /* right: calc(2%); */
     z-index: 1;
 }
 .slider__btn.prev{
-    left: calc(50% - 430px);
+    left: -20px;
     z-index: 1;
 }
 
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .sliderBlock{
+        width: calc(100% - 160px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .sliderBlock{
+        width: calc(100% - (160px*3));
+    }
+}
+
+@media (max-width: 767px) {
+    .sliderBlock{
+        width: calc(100% - (160px*4));
+    }
+}
+
+@media (max-width: 480px) {
+    .sliderBlock{
+        width: calc(100% - (160px*5));
+    }
+    .sliderContainer{
+        width: 1120px;
+        margin: 0 auto;
+    }
+    .title{
+        font-size: 1.8em;
+        width: 300px;
+    }
+    
+}

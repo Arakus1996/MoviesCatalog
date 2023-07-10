@@ -29,10 +29,18 @@
     fill: white;
 }
 .ageRaiting__text{
-    font-size: 1em;
+    font-size: 14px;
+    color: white;
     position: absolute;
     left: 0;
     right: 0;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+@media (max-width: 480px) {
+    .description > p{
+        max-width: 90%;
+        margin: 20px 0;
+    }
 }

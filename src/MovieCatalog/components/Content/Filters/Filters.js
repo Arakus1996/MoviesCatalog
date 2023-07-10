@@ -6,10 +6,10 @@ const Filters = (props) => {
         e.preventDefault();
     }
     return (
-        <form className={style.movieFiltersForm} onSubmit={handleSubmit}>
+        <div className={style.movieFiltersForm} onSubmit={handleSubmit}>
             <FilterList countries={props.countries} genres={props.genres}
                 movieType={props.movieType} activeFilters={props.activeFilters}/>
-        </form>
+        </div>
     );
 }
 

@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
 import style from './InputRangeTwoThumb.module.css'
-// Надо будет переделать range slider сделать кастомный, 
-//чтобы он во всех браузерах норм был
-// Добавить валидацию
 
 const InputRangeTwoThumb = (props) => {
     const [lowerValue, setLowerValue] = useState(props.min)

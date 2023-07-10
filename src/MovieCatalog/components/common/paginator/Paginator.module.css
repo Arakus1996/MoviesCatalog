@@ -1,6 +1,7 @@
 .paginator{
     color:white;
     text-align: center;
+    margin: 1em;
 }
 .paginator > span{
     padding: 5px 10px 5px 10px;
@@ -11,5 +12,5 @@
 }
 
 .currentPageBtn{
-    border: 2px solid red;
+    border: 2px solid #FFDA47;
 }

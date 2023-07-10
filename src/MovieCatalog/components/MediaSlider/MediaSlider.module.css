@@ -41,3 +41,11 @@
 .pages .active{
     color:#FFDA47
 }
+
+@media (max-width: 480px) {
+    .mediaSlider__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

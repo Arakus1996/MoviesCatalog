@@ -2,3 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
 }
+
+@media (max-width: 480px) {
+    .content{
+        display: block
+    } 
+}

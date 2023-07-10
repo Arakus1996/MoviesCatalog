@@ -3,43 +3,58 @@ import { ReactComponent as LogoBurger } from '../../../../icons/burger.svg'
 import { useDispatch } from 'react-redux';
 import { setActiveCountries, setActiveGenres, setActiveMovieType, setDefaultFilters, setIsTop, setNewMovieDate } from '../../../../store/reducers';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import dateRange from '../../../utils/parseFunc/dateRange';
 
-
-///// Надо в навбаре настроить популярные фильтры по клику 
-const NavButtons = (props) => {
-///вынести функцию получения даты эта функция вызывается когда надо щапросить фильмы новинки
-    const dateRange = () => {
-        let toDate = new Date()
-        let fromDate = new Date()
-        fromDate.setMonth(fromDate.getMonth() - 1)
-        toDate = toDate.toLocaleDateString('ru-RU');
-        fromDate = fromDate.toLocaleDateString('ru-RU');
-        return `${fromDate}-${toDate}`
-    }
-
+const NavList = (props) => {
+    // const dateRange = () => {
+    //     let toDate = new Date()
+    //     let fromDate = new Date()
+    //     fromDate.setMonth(fromDate.getMonth() - 1)
+    //     toDate = toDate.toLocaleDateString('ru-RU');
+    //     fromDate = fromDate.toLocaleDateString('ru-RU');
+    //     return `${fromDate}-${toDate}`
+    // }
     const dispatch = useDispatch()
     const handleClick = (data, action) => {
         dispatch(setDefaultFilters())
         dispatch(action(data))
     }
+    const handleDefault = () => {
+        dispatch(setDefaultFilters())
+    }
+    const [isActiveBurger, setIsActiveBurger] = useState(false)
+    const handleMouseOver = () => {
+        setIsActiveBurger(true)
+    }
+    const handleMouseOut = () => {
+        setIsActiveBurger(false)
+    }
     return (
         <Link to="/">
-        <ul className={style.navList}>
-            <li><a><LogoBurger className={style.logoBurger} /><span>Категории</span></a></li>
-            <li onClick={() => handleClick('Фильмы', setActiveMovieType)}><a>Фильмы</a></li>
-            <li onClick={() => handleClick(dateRange(), setNewMovieDate)}><a>Новинки</a></li>
-            <li onClick={() => handleClick('Сериалы', setActiveMovieType)}><a>Сериалы</a></li>
-            <li onClick={() => handleClick('реальное ТВ', setActiveGenres)}><a>Передачи</a></li>
-            <li onClick={() => handleClick('Мультфильмы', setActiveMovieType)}><a>Мультики</a></li>
-            <li onClick={() => handleClick('!null', setIsTop)}><a>Топ-500</a></li>
-            <li onClick={handleClick}><a>Подборки</a></li>
-            <li onClick={handleClick}><a>Скоро в кино</a></li>
-            <li onClick={() => handleClick('Аниме', setActiveMovieType)}><a>Аниме</a></li>
-            <li onClick={() => handleClick('Россия', setActiveCountries)}><a>Русское</a></li>
-            <li onClick={handleClick}><a>Рандом</a></li>
-        </ul>
-        </Link>
+            <ul className={style.navList}>
+                <div >
+                    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={style.burger}><LogoBurger className={style.logoBurger} /></div>
+                    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={style.category + (isActiveBurger ? style.active : '')}>
+                        <div className={style.wrappCategory}>
+                            <li onClick={handleDefault}><span>Главная</span></li>
+                            <li onClick={() => handleClick('Фильмы', setActiveMovieType)}><span>Фильмы</span></li>
+                            <li onClick={() => handleClick(dateRange(), setNewMovieDate)}><span>Новинки</span></li>
+                            <li onClick={() => handleClick('Сериалы', setActiveMovieType)}><span>Сериалы</span></li>
+                            <li onClick={() => handleClick('реальное ТВ', setActiveGenres)}><span>Передачи</span></li>
+                            <li onClick={() => handleClick('Мультфильмы', setActiveMovieType)}><span>Мультики</span></li>
+                            <li onClick={() => handleClick('!null', setIsTop)}><span>Топ-500</span></li>
+                            <li onClick={handleClick}><span>Подборки</span></li>
+                            <li onClick={handleClick}><span>Скоро в кино</span></li>
+                            <li onClick={() => handleClick('Аниме', setActiveMovieType)}><span>Аниме</span></li>
+                            <li onClick={() => handleClick('Россия', setActiveCountries)}><span>Русское</span></li>
+                            <li onClick={handleClick}><span>Рандом</span></li>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </Link >
     );
 }
 
-export default NavButtons;
+export default NavList;

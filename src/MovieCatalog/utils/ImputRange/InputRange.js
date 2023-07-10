@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react';
 import style from './InputRange.module.css'
-// Надо будет переделать range slider сделать кастомный, 
-//чтобы он во всех браузерах норм был
-/// надо бюджет как то подругому представить
-/// Надо добавить визуал того каие фильтры активны а какие нет
 
 const InputRange = (props) => {
     const [value, setValue] = useState(props.initialValue)

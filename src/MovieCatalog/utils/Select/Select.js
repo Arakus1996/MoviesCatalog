@@ -3,11 +3,8 @@ import style from './Select.module.css'
 import { ReactComponent as LogoArrow } from '../../../icons/arrowDown.svg'
 import {ReactComponent as LogoCheck} from '../../../icons/check.svg'
 
-const Select = (props) => {
-    
-    // чтобы фильтры сохранялись так же добавить сброс фильтров
+const Select = (props) => {  
     // надо чтобы были селекты с 1 выбором и с чекбоксами
-    //Пофиксить галки
     const activeFilter = props.activeFilter
     const [isActive, setIsActive] = useState(false)
 
@@ -29,8 +26,8 @@ const Select = (props) => {
 
             <div className={style.select__body}>
                 <ul className={style.select__options}>
-                    {props.options.map(option =>
-                        <li onClick={() => handleClick(option.name)} className={style.select__option}>
+                    {props.options.map((option, index) =>
+                        <li key={index} onClick={() => handleClick(option.name)} className={style.select__option}>
                             <span>{option.name}</span> 
                             <LogoCheck className={style.select__check + ' ' + (activeFilter === option.name ? style.active : ' ')}/>
                         </li>)}

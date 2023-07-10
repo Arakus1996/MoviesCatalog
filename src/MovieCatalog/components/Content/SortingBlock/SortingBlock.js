@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
 import style from './SortingBlock.module.css'
 import { setCurrentPage, setSortValue } from '../../../../store/reducers';
 
-// Мб тут нужен рефакторинг, хз делать ли тут локальный стейт или оставить все в глобальном
 const SortingBlock = (props) => {
     const dispatch = useDispatch();
     const sortValue = useSelector(state => state.movie.sortValue)

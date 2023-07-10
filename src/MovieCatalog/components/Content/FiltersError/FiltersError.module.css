@@ -1,0 +1,23 @@
+.errorFilters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #262A2D;
+    padding: 20px;
+}
+.errorFilters > div{
+    margin: 5px auto;
+}
+.errorFilters__logo{
+    width: 50px;
+    margin: auto;
+    fill:#ffda477a;
+}
+.errorFilters__text{
+    font-size: 2em;
+    opacity: 0.5;
+}
+.errorFilters__advice{
+    font-size: 1em;
+    opacity: 0.5;
+}

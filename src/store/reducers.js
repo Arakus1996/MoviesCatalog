@@ -1,8 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-// Надо реализовать фильтрацию по чекбоксам, массивы объектов затянул надо как то дополнять api фильтрами
-// мб массив идентификаторов ??????  
-
 const initialState = {
     idMovie: null,
     idPerson: null,
@@ -37,7 +34,6 @@ const initialState = {
     },
     currentPage: 1,
     perPage: 5,
-    // totalCount: 0,
     totalPages: 0,
     selectedSort: [
         { name: "Популярности", sortField: "votes.kp" },
@@ -45,7 +41,9 @@ const initialState = {
         { name: "Годам", sortField: "year" }
     ],
     sortValue: 0,
-    isDefault: true
+    isDefault: true,
+    error: null,
+    isFetching: false
 }
 
 const movieSlice = createSlice({
@@ -62,7 +60,6 @@ const movieSlice = createSlice({
             state.movieOnSaleId = action.payload
         },
         setMovieForSlider(state, action) {
-            // state.movieData.push(action.payload)
             state.moviesOnSaleData = action.payload.docs
         },
         setMovie(state, action) {
@@ -74,7 +71,6 @@ const movieSlice = createSlice({
         setMovies(state, action) {
             state.moviesData = action.payload.docs
             state.totalPages = action.payload.pages
-            // state.totalCount = action.payload.totalCount
         },
         setCounties(state, action) {
             state.countriesData = action.payload
@@ -82,9 +78,6 @@ const movieSlice = createSlice({
         setGenres(state, action) {
             state.genresData = action.payload
         },
-        // setTypeNumber(state, action) {
-        //     state.movieTypeNumber = action.payload
-        // },
         setCurrentPage(state, action) {
             state.currentPage = action.payload
         },
@@ -134,6 +127,12 @@ const movieSlice = createSlice({
         setDefaultFilters(state) {
             state.activeFilters = initialState.activeFilters
             state.isDefault = true
+        },
+        setError(state, action) {
+            state.error = action.payload
+        },
+        setIsFetching(state, action) {
+            state.isFetching = action.payload
         }
 
     }
@@ -142,5 +141,5 @@ const movieSlice = createSlice({
 export default movieSlice.reducer
 export const { setMovieId, setPersonId, setMovieOnSaleId, setMovieForSlider, setMovieSlider, setMovie, setPerson, setMovies, setCounties, setGenres,
     setCurrentPage, setSortValue, setSearchString, setTypeNumber, setActiveGenres, setActiveMovieType, setActiveCountries, setActiveYears,
-    setActiveAge, setActiveRaitingKp, setActiveRaitingImdb, setActiveBudget, setActiveFees, setNewMovieDate, setIsTop, 
-    setDefaultFilters, setNotDefaultFilter } = movieSlice.actions
+    setActiveAge, setActiveRaitingKp, setActiveRaitingImdb, setActiveBudget, setActiveFees, setNewMovieDate, setIsTop,
+    setDefaultFilters, setNotDefaultFilter, setError, setIsFetching } = movieSlice.actions

@@ -1,6 +1,7 @@
 .person{
     display: grid;
-    grid-template-areas: "media description description"
+    grid-template-areas: "name name name"
+                         "media description description"
                          "etcContent etcContent etcContent";
     grid-template-columns: 1fr 3fr;
     grid-column-gap: 1em;
@@ -10,21 +11,25 @@
 
 .mediaBlock{
     grid-area: media;
-    
+    margin-bottom: 0.5em;  
 }
 .mediaBlock__poster{
     max-width: 300px;
-    min-width: 200px;
+    min-width: 150px;
+    margin: 0 auto;
 }
 .discriptionBlock{
     grid-area: description;
     font-size: 0.9em;
+    min-width: 260px;
 }
 .discriptionBlock > div{
     margin-bottom: 0.4em;
 }
 
 .discriptionBlock__name{
+    grid-area: name;
+    margin-bottom: 0.5em;
     font-size: 2.5em;
     font-weight: bold;
     color: white;
@@ -41,4 +46,12 @@
     font-size: 1.8em;
     
     padding-bottom: 0.5em;
+}
+
+@media (max-width: 480px) {
+    .person{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

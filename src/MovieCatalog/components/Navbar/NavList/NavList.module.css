@@ -5,14 +5,13 @@
     width: 100%;
     text-align: center;
     background-color: #0C0F0F;
+    position: relative;
 }
-
 .navList li {
     display: inline;
-
 }
 
-.navList a {
+.navList span {
     position: relative;
     padding: 1.2em 1.1em;
     text-decoration: none;
@@ -21,11 +20,20 @@
     transition-duration: 0.3s;
     cursor: pointer;
 }
-
+.navList > div > .burger {
+    position: relative;
+    padding: 1.2em 1.1em;
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.659);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    display: none;
+}
 
 .logoBurger{
     position: absolute;
-    left: 0;
+    left: 20px;
     right: 0;
     top: 50%;
     transform: translate(0, -50%);
@@ -35,9 +43,35 @@
     transition-duration: 0.3s;
 }
 
-.navList a:hover { 
+.navList span:hover { 
     color: #FFDA47;
 }
-.navList a:hover .logoBurger { 
+.navList .burger:hover .logoBurger { 
     fill: #FFDA47;
 }
+
+@media (max-width: 480px) {
+    .navList > div > .burger {
+        display: block;
+    }
+    .navList li{
+        display: block;
+        width: 9em;
+        background-color: #0c0f0fe5;
+    }
+    .navList li > span{
+        padding: 0.7em 1.1em;
+    }
+    .wrappCategory {
+        z-index: 2;
+        position: absolute;
+    }
+    .category{
+        display: none;
+    }
+    .category.active{
+        display: block; 
+    }
+
+}
+

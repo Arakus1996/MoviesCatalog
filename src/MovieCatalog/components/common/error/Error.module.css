@@ -1,0 +1,18 @@
+.errorBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #262A2D;
+    padding: 1em;
+}
+
+.errorBlock > h1{
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(223, 83, 83);
+}
+
+.errorBlock > p{
+    font-size: 1.2em;
+    text-align: center;
+}

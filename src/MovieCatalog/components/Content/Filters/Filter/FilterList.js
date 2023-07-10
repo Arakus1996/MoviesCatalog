@@ -16,11 +16,13 @@ import Button from "../../../../utils/Button/Button"
 /// отправлять запрос на сервер
 /// везде лучше поставить range с 2 thumb
 
-const FilterItem = (props) => {
-    return (
-        <Select name={props.name} options={props.filterItems} activeFilter={props.activeFilter} dispatchActiveFilters={props.dispatchActiveFilters} />
-    )
-}
+//// выбор возраста поменять на чекбоксы
+
+// const FilterItem = (props) => {
+//     return (
+//         <Select name={props.name} options={props.filterItems} activeFilter={props.activeFilter} dispatchActiveFilters={props.dispatchActiveFilters} />
+//     )
+// }
 
 const FilterList = (props) => {
     const ageRaitingRange = {
@@ -58,14 +60,9 @@ const FilterList = (props) => {
     }
     return (
         <>
-            <FilterItem name={"Жанр"} filterItems={props.genres} activeFilter={props.activeFilters.genre} dispatchActiveFilters={(option) => dispatch(setActiveGenres(option))} />
-            <FilterItem name={"Фильм, Сериал, Мультфильм"} filterItems={props.movieType} activeFilter={props.activeFilters.movieType?.name} dispatchActiveFilters={(option) => dispatch(setActiveMovieType(option))} />
-            <FilterItem name={"Страна"} filterItems={props.countries} activeFilter={props.activeFilters.countrie} dispatchActiveFilters={(option) => dispatch(setActiveCountries(option))} />
+            <Select name={"Фильм, Сериал, Мультфильм"} options={props.movieType} activeFilter={props.activeFilters.movieType?.name} dispatchActiveFilters={(option) => dispatch(setActiveMovieType(option))} />
+            <Select name={"Страна"} options={props.countries} activeFilter={props.activeFilters.countrie} dispatchActiveFilters={(option) => dispatch(setActiveCountries(option))} />
             <InputRangeTwoThumb name={"Годы"} min={1860} max={2030} step={1} isDefault={isDefault} setIsDefault={setIsDefault} dispatchActiveFilters={(option) => dispatch(setActiveYears(option))} />
-
-
-            {/* <FilterItem name={"Год"} filterItems={years} dispatchActiveFilters={(option) => dispatch(setActiveYear(option))}/> */}
-            {/* ТУТ НАДО ПОФИКСИТЬ МБ ПО ДРУГОМУ РАСПОЛОЖИТЬ UL LI НАДО ??? */}
             
             <InputRange name={"Возраст"} initialValue={0} range={ageRaitingRange} isDefault={isDefault} setIsDefault={setIsDefault} dispatchActiveFilters={(option) => dispatch(setActiveAge(option))} />
 
@@ -79,7 +76,6 @@ const FilterList = (props) => {
 
             <div className={style.resetFiltersBtn}><Button onClick={handleClick}>Сбросить Фильтры</Button></div>
             
-            {/* <ul className={style.removeFilterBlock}>{Object.values(props.activeFilters).map(filter => filter ? <li className={style.removeFilterBtn}>{filter} <span>X</span></li> : '')}</ul> */}
         </>
     );
 }

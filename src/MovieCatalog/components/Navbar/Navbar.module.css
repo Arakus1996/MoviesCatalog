@@ -1,6 +1,6 @@
 .navHead{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items:center;
     padding: 20px 20px;
     background-color: #1F2326;
@@ -12,7 +12,9 @@
     padding-right: 10px;
 }
 .findForm{
-    width: 40%;
+    margin: 0 auto;
+    width: 50%;
+    min-width: 100px;
     display: flex;
 }
 .findForm > input,
@@ -30,10 +32,11 @@
     cursor: pointer;
 }
 .logoBtnFind{
-    height: 1.2em;
-    width: 1.2em;
+    height: 2em;
+    width: 2em;
     fill: rgba(255, 255, 255, 0.659);
-    margin: 5px;
+    /* margin: 5px; */
+    padding: 5px;
 }
 .btnFindForm:hover .logoBtnFind{
     fill: #FFDA47;

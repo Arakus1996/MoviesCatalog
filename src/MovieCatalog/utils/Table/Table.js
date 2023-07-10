@@ -1,10 +1,12 @@
 import style from './Table.module.css'
-////// Попробовать доделать табоицу отдельной компонентой чтобы в информации о персоне ее выводить
+
 export const Table = (props) => {
     return (
         <div className={style.discriptionBlock__table}>
             <table>
+                <tbody>
                 {props.children}
+                </tbody>
             </table>
         </div>
     );
