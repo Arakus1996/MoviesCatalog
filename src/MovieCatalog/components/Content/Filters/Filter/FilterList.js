@@ -8,21 +8,7 @@ import {
     setActiveBudget, setActiveCountries, setActiveFees, setActiveMovieType, setActiveGenres,
     setActiveRaitingImdb, setActiveRaitingKp, setActiveAge, setActiveYears, setDefaultFilters, setNotDefaultFilter
 } from "../../../../../store/reducers"
-import { useState } from "react"
 import Button from "../../../../utils/Button/Button"
-
-//////Надо сделлать для фильтров где поле ввода что то типа editMode
-/// надо при нажатии на поле редактировать и визуально это выделить, а при нажатии на свободное пространство
-/// отправлять запрос на сервер
-/// везде лучше поставить range с 2 thumb
-
-//// выбор возраста поменять на чекбоксы
-
-// const FilterItem = (props) => {
-//     return (
-//         <Select name={props.name} options={props.filterItems} activeFilter={props.activeFilter} dispatchActiveFilters={props.dispatchActiveFilters} />
-//     )
-// }
 
 const FilterList = (props) => {
     const ageRaitingRange = {

@@ -19,7 +19,6 @@
     min-width: 10em;
     height: 20px;
     position: relative;
-    /* padding: 5px; */
 }
 
 input[type=range]{
@@ -29,7 +28,6 @@ input[type=range]{
     background: transparent;
     position: absolute;
     width: 100%;
-    /* padding: 0 15px; */
 }
 
 /* webkit */

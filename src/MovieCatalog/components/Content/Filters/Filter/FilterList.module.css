@@ -16,9 +16,6 @@ InputRangeTwoThumb{
     display: flex;
     justify-content: center;
 }
-.removeFilterBlock{
-
-}
 .removeFilterBtn{
     display: inline-block;
     margin: 0.3em;

@@ -14,7 +14,6 @@
     padding: 20px;
 }
 
-/* Тут паддинг выглядит сомнительно позже чекнуть */
 .movieInfo{ 
     display: flex;
     flex-direction: column;
@@ -22,7 +21,6 @@
     font-size: 0.9em;
 }
 
-/* Тут мб еще подумать */
 .movieInfo_section{
     overflow: hidden;
 }

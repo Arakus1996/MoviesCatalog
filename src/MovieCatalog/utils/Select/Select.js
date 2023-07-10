@@ -4,7 +4,6 @@ import { ReactComponent as LogoArrow } from '../../../icons/arrowDown.svg'
 import {ReactComponent as LogoCheck} from '../../../icons/check.svg'
 
 const Select = (props) => {  
-    // надо чтобы были селекты с 1 выбором и с чекбоксами
     const activeFilter = props.activeFilter
     const [isActive, setIsActive] = useState(false)
 

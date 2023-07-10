@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import {useState } from 'react'
 import MediaSliderPage from './MediaSliderPage'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { setMovieOnSaleId } from '../../../store/reducers'
 
 const MediaSlider = (props) => {

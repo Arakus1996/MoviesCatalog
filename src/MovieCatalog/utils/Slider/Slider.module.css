@@ -1,6 +1,5 @@
 .slider{
     font-size: 1em;
-    /* width: 1280px; */
     width: 1160px;
 }
 .title{
@@ -91,7 +90,6 @@ h3{
 
 .slider__btn.next{
     right: -20px;
-    /* right: calc(2%); */
     z-index: 1;
 }
 .slider__btn.prev{

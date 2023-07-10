@@ -21,9 +21,7 @@ export const MovieCatalog = () => {
     const sortValue = useSelector(state => state.movie.sortValue)
     const activeFilters = useSelector(state => state.movie.activeFilters)
     const searchString = useSelector(state => state.movie.searchString)
-    const errorData = useSelector(state => state.movie.error)
-    const isFetching = useSelector(state => state.movie.isFetching)
-    
+    const errorData = useSelector(state => state.movie.error) 
 
     const dispatch = useDispatch()
     useEffect(() => {

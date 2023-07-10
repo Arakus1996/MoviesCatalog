@@ -7,14 +7,7 @@ import { useState } from 'react';
 import dateRange from '../../../utils/parseFunc/dateRange';
 
 const NavList = (props) => {
-    // const dateRange = () => {
-    //     let toDate = new Date()
-    //     let fromDate = new Date()
-    //     fromDate.setMonth(fromDate.getMonth() - 1)
-    //     toDate = toDate.toLocaleDateString('ru-RU');
-    //     fromDate = fromDate.toLocaleDateString('ru-RU');
-    //     return `${fromDate}-${toDate}`
-    // }
+
     const dispatch = useDispatch()
     const handleClick = (data, action) => {
         dispatch(setDefaultFilters())

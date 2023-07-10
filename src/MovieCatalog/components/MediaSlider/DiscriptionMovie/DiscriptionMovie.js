@@ -2,14 +2,8 @@ import Button from '../../../utils/Button/Button'
 import style from './DiscriptionMovie.module.css'
 import { ReactComponent as LogoPg } from '../../../../icons/pg.svg'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { setMovieId } from '../../../../store/reducers'
 
 const DiscriptionMovie = (props) => {
-    // const dispatch = useDispatch
-    // const handleClick = (movieId) => {
-    //     dispatch(setMovieId(movieId))
-    // }
     return (
         <div className={style.descriptionBlock}>
             <section className={style.description}>

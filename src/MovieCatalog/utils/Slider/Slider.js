@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import { ReactComponent as SlideArrow } from '../../../icons/slideArrow.svg'
 import valueColor from '../parseFunc/valueColor'
 
-
 const Slider = (props) => {
     const valueCalc = () => {
         let screen = window.innerWidth
