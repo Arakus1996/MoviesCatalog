@@ -1,3 +1,5 @@
+there is an api key for 200 requests,
+you can get your api key for 200 requests for free https://api.kinopoisk.dev/v1/documentation#/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
